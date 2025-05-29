@@ -4,11 +4,6 @@ from nba_api.stats.endpoints import playercareerstats, teamdashboardbygeneralspl
 import time
 import os
 
-if __name__ == '__main__':
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
-
-
 app = Flask(__name__)
 
 # --- 헬퍼 함수들 ---
@@ -127,4 +122,5 @@ def nba_compare_players():
     return jsonify({"comparison": results})
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
