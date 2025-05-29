@@ -2,6 +2,12 @@ from flask import Flask, request, jsonify
 from nba_api.stats.static import players, teams
 from nba_api.stats.endpoints import playercareerstats, teamdashboardbygeneralsplits
 import time
+import os
+
+if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
 
 app = Flask(__name__)
 
